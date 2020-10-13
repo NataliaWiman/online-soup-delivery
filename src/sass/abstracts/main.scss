@@ -1,0 +1,43 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  font-family: $font-family;
+  background-color: $body-background;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+button,
+input,
+textarea {
+  font-family: $font-family;
+}
+
+p {
+  margin: 0;
+}
+
+*::-webkit-scrollbar {
+  width: 4px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  width: 1px;
+  height: 60px;
+  opacity: 1;
+  margin-top: 10px;
+  border: solid 2px $scrollbar-thumb;
+}
+
+::-webkit-scrollbar {
+  cursor: move;
+}
