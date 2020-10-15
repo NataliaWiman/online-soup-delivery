@@ -1,0 +1,12 @@
+.header {
+  min-height: 45px;
+  display: grid;
+  grid-template-columns: 100px auto 100px;
+  align-items: center;
+  background-color: $bg1;
+
+  .logo {
+    display: flex;
+    justify-content: center;
+  }
+}

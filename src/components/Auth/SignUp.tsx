@@ -46,7 +46,7 @@ const SignUp = () => {
       .then((userCredential : firebase.auth.UserCredential) => {
         authContext.setUser(userCredential);
         const db = firebase.firestore();
-        db.collection("NewUsers")
+        db.collection("Users")
           .doc(userCredential.user!.uid)
           .set({
             email: values.email,
@@ -68,13 +68,17 @@ const SignUp = () => {
     <div>
     <h1>Sign Up</h1>
     <form onSubmit={handleSubmit}>
-       <input type="text" name="username" placeholder="Username" onChange={handleChange} /><br />
-       <input type="text" name="phone" placeholder="Phone" onChange={handleChange}/><br />
-       <input type="text" name="email" placeholder="Enter your Email" onChange={handleChange}/><br />
-       <input type="password" name="password" placeholder="Enter your Password" onChange={handleChange}/><br />
-       <button type="submit">Sign Up</button>
-       <p>Already have an account?</p>
-       <button onClick={handleClick}>Sign In</button>
+      <input type="text" name="username" placeholder="Username" onChange={handleChange} /><br />
+      <input type="text" name="phone" placeholder="Phone" onChange={handleChange}/><br />
+      <input type="text" name="email" placeholder="Enter your Email" onChange={handleChange}/><br />
+      <input type="password" name="password" placeholder="Enter your Password" onChange={handleChange}/><br />
+      <label htmlFor="admin">
+        <input type="checkbox" name="admin"/>
+        I'm an Admin
+      </label><br />
+      <button type="submit">Sign Up</button>
+      <p>Already have an account?</p>
+      <button onClick={handleClick}>Sign In</button>
      </form>
     </div>
   );

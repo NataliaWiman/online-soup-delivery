@@ -2,15 +2,15 @@ import React, { useContext } from "react";
 import { Route, Redirect, RouteProps } from "react-router-dom";
 import { AuthContext } from "../Firebase/AuthProvider";
 
-const PrivateRoute: React.FC<RouteProps> = ({ component: RouteComponent, ...rest}) => {
+export const PrivateRoute: React.FC<RouteProps> = ({ component: RouteComponent, ...rest}) => {
   const {authenticated, loadingAuthState} = useContext(AuthContext);
   if (loadingAuthState) {
     return (
       <div>
-        <h1>Loading...</h1>
+        <h1>Loading...</h1> 
       </div>
    );
-}
+  };
   if (!RouteComponent) return null;
   return (
     <Route
@@ -24,6 +24,4 @@ const PrivateRoute: React.FC<RouteProps> = ({ component: RouteComponent, ...rest
       }
     />
   );
-}
-
-export default PrivateRoute;
+};

@@ -1,0 +1,11 @@
+.logo {
+  font-size: $font-size-large;
+  font-weight: $semibold;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: $color-text;
+
+  span {
+    color: $accent;
+  }
+}
