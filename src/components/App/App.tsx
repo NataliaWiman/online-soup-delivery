@@ -1,6 +1,5 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { Navigation } from '../Navigation';
 import { AccountPage } from "../pages/Account";
 import { AdminPage } from "../pages/Admin";
 import { HomePage } from "../pages/Home";
@@ -13,12 +12,10 @@ import { PrivateRoute } from "../PrivateRoutes";
 import { SignOut } from "../Auth/SignOut";
 import { Header } from "../Header";
 
-export const App = () => 
+export const App = () =>
   <Router>
     <div className="App">
       <Header />
-      <Navigation />
-      <hr />
       <Route exact path={ROUTES.HOME} component={HomePage} />
       <Route path={ROUTES.SIGN_UP} component={SignUpPage} />
       <Route path={ROUTES.SIGN_IN} component={SignInPage} />

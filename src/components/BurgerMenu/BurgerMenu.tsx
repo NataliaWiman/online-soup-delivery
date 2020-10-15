@@ -1,14 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
+import { BurgerMenuProps } from "./types";
 
-export const BurgerMenu = () => {
-  const [openNav, setOpenNav] = useState(false);
+export const BurgerMenu = ({ isOpen, handleToggle }: BurgerMenuProps) => {
 
   const handleClick = () => {
-    setOpenNav(!openNav);
+    handleToggle();
   };
 
   return (
-  <button onClick={handleClick} className={openNav ? 'burger-menu active' : 'burger-menu'}>
+  <button onClick={handleClick} className={isOpen ? 'burger-menu active' : 'burger-menu'}>
     <span></span>
   </button>
 )};
