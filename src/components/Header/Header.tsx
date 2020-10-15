@@ -1,4 +1,4 @@
-import React, { useState, useRef, useCallback } from "react";
+import React, { useState } from "react";
 import * as ROUTES from '../../constants/routes';
 import { Link } from "react-router-dom";
 import { BurgerMenu } from "../BurgerMenu";
