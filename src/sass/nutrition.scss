@@ -1,0 +1,35 @@
+.nutrition {
+  &__title {
+    @include subtitle;
+  }
+  &__list {
+    @include list-reset;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__item {
+    width: 100%;
+    padding: 10px 10px;
+    text-align: center;
+    background-color: $light-grey;
+    border-radius: 10px;
+
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
+  &__name {
+    font-family: $font-secondary;
+    font-size: $font-size-medium;
+    font-weight: $semibold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: $black;
+  }
+  &__amount {
+    font-family: $font-secondary;
+    font-size: $font-size-small;
+    letter-spacing: 0.5px;
+    color: $black;
+  }
+}

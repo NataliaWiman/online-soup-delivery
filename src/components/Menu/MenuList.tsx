@@ -18,6 +18,7 @@ export const MenuList = () => {
           description: items[item].description,
           price: items[item].price,
           label: items[item].label,
+          preference: items[item].preference,
           done: items[item].done
         });
       }
@@ -26,13 +27,13 @@ export const MenuList = () => {
   },[])
 
   return (
-    <>
+    <ul className="menu-list">
       {menu.map((item: any, i: number) => (
         <React.Fragment key={item.id}>
           <MenuItem  menuItem={item} />
           {i<menu.length -1 && <br />}
         </React.Fragment>
       ))}
-    </>
+    </ul>
   );
 };

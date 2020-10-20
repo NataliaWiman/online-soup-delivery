@@ -1,0 +1,26 @@
+.showinfo {
+  &__btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: $regular;
+    text-align: left;
+    color: $dark-grey;
+    background-color: $bg1;
+    border-top: 1px solid $light-grey;
+
+    &:hover {
+      background-color: rgba($light-grey, 0.5);
+      transition: all 0.1s ease-in-out;
+    }
+  }
+
+  &__icon {
+    max-height: 24px;
+    fill: $dark-grey;
+
+    &--down {
+      transform: rotate(180deg);
+    }
+  }
+}

@@ -1,0 +1,67 @@
+.menu-new {
+  &__form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    background-color: $white;
+  }
+
+  &__form-title {
+    @include title;
+    margin-bottom: 20px;
+  }
+
+  &__close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__close-icon {
+    display: block;
+    transform: rotate(45deg);
+  }
+
+  &__label {
+    margin-bottom: 10px;
+    font-family: $font-family;
+    font-size: $font-size-medium;
+
+    &--title {
+      width: 65%;
+    }
+    &--price {
+      width: 30%;
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
+    }
+  }
+
+  &__btn {
+    margin-top: 20px;
+  }
+
+  &__input {
+    @include input-field;
+
+    &-wrapper {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &--price {
+      text-align: right;
+    }
+  }
+}

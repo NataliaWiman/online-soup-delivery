@@ -1,0 +1,29 @@
+.menu-nav {
+  width: 100%;
+  color: $black;
+  background-color: $accent;
+
+  &__wrapper {
+    width: 100%;
+  }
+
+  &__list {
+    @include list-reset;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__item {
+    @include title;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    min-height: 45px;
+    font-size: $font-size-medium;
+
+    &--active {
+      box-shadow: inset 0 -3px 0 0 $black;
+    }
+  }
+}

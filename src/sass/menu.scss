@@ -1,0 +1,67 @@
+.menu {
+  display: flex;
+  flex-direction: column;
+
+  &__addnewitem {
+    &-overlay {
+      @include overlay;
+    }
+
+    &-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 20px 0;
+    }
+
+    &-btn {
+      display: grid;
+      place-items: center;
+      padding: 0;
+      color: $dark-grey;
+      background-color: transparent;
+      border: 1px solid $dark-grey;
+    }
+
+    &-icon {
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+      fill: $dark-grey;
+    }
+
+    &-btn-text {
+      display: flex;
+      align-items: center;
+    }
+
+    &.open {
+      @include plus-sign($dark-grey, 20px);
+      width: fit-content;
+      align-self: center;
+      padding-top: 45px;
+
+      &:before,
+      &:after {
+        top: 25px;
+      }
+    }
+
+    &.close {
+      @include cross-sign($dark-grey, 20px);
+      width: fit-content;
+      align-self: center;
+      padding-top: 45px;
+
+      :before,
+      &:after {
+        top: 25px;
+      }
+    }
+  }
+}
+
+.menu-list {
+  display: flex;
+  flex-direction: column;
+}

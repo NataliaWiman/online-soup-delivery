@@ -1,0 +1,1 @@
+export { ExpandIcon } from './Expand';

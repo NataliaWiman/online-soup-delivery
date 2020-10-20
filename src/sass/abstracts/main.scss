@@ -41,3 +41,66 @@ p {
 ::-webkit-scrollbar {
   cursor: move;
 }
+
+.page-width {
+  max-width: 750px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.button {
+  width: 100%;
+  min-height: 45px;
+  padding: 10px 20px;
+  font-family: $font-secondary;
+  font-size: $font-size-medium;
+  font-weight: $semibold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: $black;
+  background-color: $accent;
+  border: 0;
+  cursor: pointer;
+  transition: all 0.1s linear;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.ghost-button {
+  min-height: 45px;
+  padding: 10px 20px;
+  font-family: $font-secondary;
+  font-size: $font-size-medium;
+  font-weight: $semibold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: $dark-grey;
+  background-color: transparent;
+  border: 1px solid $dark-grey;
+  cursor: pointer;
+  transition: all 0.1s linear;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  &__wrapper {
+    width: 100%;
+    margin-top: 30px;
+    padding: 50px;
+    background-color: $bg1;
+  }
+
+  &__title {
+    @include title;
+    margin-bottom: 30px;
+  }
+}

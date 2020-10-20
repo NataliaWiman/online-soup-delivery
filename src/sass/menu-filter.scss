@@ -1,0 +1,36 @@
+.menu-filter {
+  width: 100%;
+  color: $black;
+  background-color: $bg1;
+
+  &__wrapper {
+    width: 100%;
+  }
+
+  &__list {
+    @include list-reset;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__item {
+    width: 100%;
+    display: grid;
+    place-items: center;
+    min-height: 45px;
+    font-size: $font-size-medium;
+
+    p {
+      padding: 5px 15px;
+    }
+
+    &--active {
+      p {
+        padding: 5px 15px;
+        background-color: $accent;
+        border-radius: 20px;
+      }
+    }
+  }
+}

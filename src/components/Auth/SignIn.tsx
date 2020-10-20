@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
-import { User, auth } from "firebase";
+//import { User, auth } from "firebase";
 import firebase from "../Firebase/firebase";
 import "firebase/auth";
 import "firebase/firestore";
@@ -50,16 +50,17 @@ const SignIn = () => {
  }
 
   return (
-    <div>
-      <h1>Sign In</h1>
-      <form onSubmit={handleSubmit}>
-        <input type="text" name="email" value={values.email} placeholder="Enter your Email" onChange={handleChange} /><br />
-        <input type="password" name="password" value={values.password} placeholder="Enter your Password" onChange={handleChange} /><br />
-        <button>Sign In</button>
-        <p>Don't have an account?</p>
-        <button onClick={handleClick}>Sign Up</button>
-      </form>
-    </div>
+    <form onSubmit={handleSubmit} className="sign-in__form">
+      <input type="text" name="email" value={values.email} placeholder="Email" onChange={handleChange} />
+      <input type="password" name="password" value={values.password} placeholder="Password" onChange={handleChange} />
+      <button className="sign-in__button button">Sign In</button>
+      <div className="sign-in__sign-up">
+        <p>
+          <span>Don't have an account?</span>
+        </p>
+        <button onClick={handleClick} className="ghost-button">Sign Up</button>
+      </div>
+    </form>
   );
 };
 

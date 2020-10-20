@@ -4,6 +4,25 @@
   padding: 0;
 }
 
+@mixin title {
+  font-family: $font-secondary;
+  font-size: $font-size-xl;
+  line-height: 26px;
+  font-weight: $semibold;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+@mixin subtitle {
+  font-family: $font-secondary;
+  font-size: $font-size-small;
+  line-height: 18px;
+  font-weight: $semibold;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: $dark-grey;
+}
+
 @mixin overlay {
   position: fixed;
   display: grid;
@@ -12,6 +31,69 @@
   height: 100%;
   top: 0;
   left: 0;
+  background: rgba($black, 0.3);
   z-index: 1000;
-  background: rgba($black, 0.2);
+}
+
+@mixin input-field {
+  width: 100%;
+  min-height: 40px;
+  padding: 5px 10px;
+  font-family: $font-family;
+  font-size: $font-size-medium;
+  background-color: $light-grey;
+  border: 0;
+  border-radius: 5px;
+
+  &:focus {
+    outline: none;
+    background-color: rgba($light-grey, 0.5);
+    box-shadow: 0px 0px 0px 1px $grey;
+  }
+}
+
+@mixin plus-sign($color: black, $size: 10px) {
+  position: relative;
+  &:before,
+  &:after {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: $color;
+    border: 0;
+    border-radius: 2px;
+  }
+  &:before {
+    width: 2px;
+    height: $size;
+  }
+  &:after {
+    width: $size;
+    height: 2px;
+  }
+}
+
+@mixin cross-sign($color: black, $size: 10px) {
+  position: relative;
+  &:before,
+  &:after {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    background-color: $color;
+    border: 0;
+    border-radius: 2px;
+  }
+  &:before {
+    width: 2px;
+    height: $size;
+  }
+  &:after {
+    width: $size;
+    height: 2px;
+  }
 }

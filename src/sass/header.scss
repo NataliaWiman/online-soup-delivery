@@ -1,10 +1,13 @@
 .header {
-  display: grid;
-  grid-template-columns: 60px auto 60px;
-  min-height: 45px;
-  padding: 0 $padding-mobile;
-  align-items: center;
-  background-color: $bg1;
+  background-color: $bg1; 
+  z-index: 100;
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 60px auto 60px;
+    align-items: center;
+    min-height: 45px;
+  }
 
   &__logo {
     display: flex;

@@ -1,0 +1,15 @@
+.ingredients {
+  margin-bottom: 20px;
+  
+  &__title {
+    @include subtitle;
+  }
+  &__list {
+    font-family: $font-secondary;
+    font-size: $font-size-medium;
+    font-weight: $semibold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: $black;
+  }
+}

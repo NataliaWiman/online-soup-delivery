@@ -65,22 +65,23 @@ const SignUp = () => {
   };
 
   return (
-    <div>
-    <h1>Sign Up</h1>
-    <form onSubmit={handleSubmit}>
-      <input type="text" name="username" placeholder="Username" onChange={handleChange} /><br />
-      <input type="text" name="phone" placeholder="Phone" onChange={handleChange}/><br />
-      <input type="text" name="email" placeholder="Enter your Email" onChange={handleChange}/><br />
-      <input type="password" name="password" placeholder="Enter your Password" onChange={handleChange}/><br />
-      <label htmlFor="admin">
+    <form onSubmit={handleSubmit} className="sign-up__form">
+      <input type="text" name="username" placeholder="Name" onChange={handleChange} />
+      <input type="text" name="phone" placeholder="Phone" onChange={handleChange}/>
+      <input type="text" name="email" placeholder="Email" onChange={handleChange}/>
+      <input type="password" name="password" placeholder="Password" onChange={handleChange}/>
+      <label htmlFor="admin" className="sign-up__admin-checkbox">
         <input type="checkbox" name="admin"/>
-        I'm an Admin
-      </label><br />
-      <button type="submit">Sign Up</button>
-      <p>Already have an account?</p>
-      <button onClick={handleClick}>Sign In</button>
-     </form>
-    </div>
+        <p>I'm an Admin</p>
+      </label>
+      <button type="submit" className="sign-up__button button">Sign Up</button>
+      <div className="sign-up__sign-in">
+        <p>
+          <span>Already have an account?</span>
+        </p>
+        <button onClick={handleClick} className="ghost-button">Sign In</button>
+      </div>
+    </form>
   );
 };
 

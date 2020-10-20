@@ -1,0 +1,41 @@
+.overflow-menu {
+  position: absolute;
+  top: 35px;
+  right: 5px;
+  display: flex;
+  flex-direction: column;
+  background-color: $bg1;
+  box-shadow: $box-shadow;
+
+  button {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    font-family: inherit;
+    font-size: inherit;
+    text-align: left;
+    background-color: $bg1;
+    border: 0;
+    cursor: pointer;
+
+    span {
+      display: block;
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+    }
+
+    .close {
+      width: 20px;
+      height: 20px;
+    }
+
+    &:hover {
+      background-color: $light-grey;
+    }
+
+    &:focus {
+      outline: 0;
+    }
+  }
+}

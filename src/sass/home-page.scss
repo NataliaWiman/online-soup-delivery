@@ -1,0 +1,13 @@
+.home-page {
+  width: 100vw;
+  height: 96vh;
+  display: grid;
+  place-items: center;
+  padding: $padding-mobile;
+  color: $white;
+  background-color: #444;
+  
+  &__container {
+    width: 100%;
+  }
+}
