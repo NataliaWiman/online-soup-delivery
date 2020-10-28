@@ -23,9 +23,6 @@ export const App = () =>
       <PrivateRoute exact path={ROUTES.ACCOUNT} component={AccountPage} />
       <PrivateRoute exact path={ROUTES.ADMIN} component={AdminPage} />
       <Route path={ROUTES.MENU} component={MenuPage} />
-
-      <br />
-      <SignOut />
     </div>
   </Router>
 ;

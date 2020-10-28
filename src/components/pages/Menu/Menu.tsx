@@ -14,7 +14,7 @@ export const MenuPage = () => {
   }
 
   const AddNewItem = () => 
-    <div className="menu__addnewitem-wrapper">
+    <div className="menu__addnewitem-wrapper page-width">
       <button className={showForm ? "menu__addnewitem-btn button close" : "menu__addnewitem-btn button open"} onClick={handleAddNewItem}>
         <p className="menu__addnewitem-btn-text"><span className="menu__addnewitem-icon"><PlusIcon /></span>Add new item</p>
       </button>

@@ -1,6 +1,11 @@
 .menu {
   display: flex;
   flex-direction: column;
+  margin-bottom: 30px;
+
+  &__wrapper {
+    padding: 0;
+  }
 
   &__addnewitem {
     &-overlay {

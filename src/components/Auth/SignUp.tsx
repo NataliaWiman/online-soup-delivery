@@ -10,6 +10,7 @@ interface FormItems {
   phone: string;
   email: string;
   password: string;
+  admin: boolean;
 };
 
 const SignUp = () => {
@@ -18,7 +19,8 @@ const SignUp = () => {
     username: "",
     email: "",
     password: "",
-    phone: ""
+    phone: "",
+    admin: false
   } as FormItems);
 
   const history = useHistory();
@@ -71,7 +73,7 @@ const SignUp = () => {
       <input type="text" name="email" placeholder="Email" onChange={handleChange}/>
       <input type="password" name="password" placeholder="Password" onChange={handleChange}/>
       <label htmlFor="admin" className="sign-up__admin-checkbox">
-        <input type="checkbox" name="admin"/>
+        <input type="checkbox" name="admin" value="true" />
         <p>I'm an Admin</p>
       </label>
       <button type="submit" className="sign-up__button button">Sign Up</button>

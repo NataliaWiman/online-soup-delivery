@@ -7,8 +7,25 @@
   }
   &__email {
     color: $dark-grey;
+    margin-bottom: 10px;
   }
-  &__bonus {
+  &__role {
+    font-size: $font-size-small;
+    text-transform: uppercase;
+  }
+  &__send-soup {
+    margin-bottom: 20px;
+  }
+  &__buttons {
+    @include list-reset;
 
+    li {
+      border-top: 1px solid $grey;
+      padding: 15px 0;
+
+      &:last-child {
+        border-bottom: 1px solid $grey;
+      }
+    }
   }
 }

@@ -1,14 +1,14 @@
 import React from "react";
 import { BurgerMenuProps } from "./types";
 
-export const BurgerMenu = ({ isOpen, handleToggle }: BurgerMenuProps) => {
+export const BurgerMenu = ({ isOpen, isNavOpen, handleToggle }: BurgerMenuProps) => {
 
-  const handleClick = () => {
+   const handleClick = () => {
     handleToggle();
   };
-
+ 
   return (
-  <button onClick={handleClick} className={isOpen ? 'burger-menu active' : 'burger-menu'}>
+  <button onClick={handleClick} className={isOpen && isNavOpen ? 'burger-menu active' : 'burger-menu'}>
     <span></span>
   </button>
 )};

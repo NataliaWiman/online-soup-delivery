@@ -15,11 +15,11 @@ export const AuthProvider = ({ children }: any) => {
   const [loadingAuthState, setLoadingAuthState] = useState(true);
   
   useEffect(() => {
-  firebase.auth().onAuthStateChanged((user: any) => {
-    setUser(user);
-    setLoadingAuthState(false);
-  });
-}, []);
+    firebase.auth().onAuthStateChanged((user: any) => {
+      setUser(user);
+      setLoadingAuthState(false);
+    });
+  }, []);
 
   return (
     <AuthContext.Provider

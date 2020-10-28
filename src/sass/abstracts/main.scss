@@ -43,9 +43,13 @@ p {
 }
 
 .page-width {
-  max-width: 750px;
+  max-width: 576px;
   padding: 0 20px;
   margin: 0 auto;
+
+  @media (min-width: 992px) {
+    max-width: 992px;
+  }
 }
 
 .button {
