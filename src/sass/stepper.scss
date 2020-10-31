@@ -1,0 +1,57 @@
+.stepper {
+  display: flex;
+  margin-right: 30px;
+
+  &--increase,
+  &--decrease {
+    display: grid;
+    place-items: center;
+    width: 45px;
+    height: 45px;
+    background-color: $white;
+    border: 1px solid $grey;
+    cursor: pointer;
+
+    span {
+      display: block;
+      width: 24px;
+      height: 24px;
+      fill: $dark-grey;
+    }
+
+    &:hover {
+      background-color: $light-grey;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &--decrease {
+    border-right: 0;
+    //border-top-left-radius: 20px;
+    //border-bottom-left-radius: 20px;
+  }
+  &--increase {
+    border-left: 0;
+    //border-top-right-radius: 20px;
+    //border-bottom-right-radius: 20px;
+  }
+
+  input {
+    width: 70%;
+    height: 45px;
+    font-family: $font-secondary;
+    font-size: $font-size-xl;
+    font-weight: $semibold;
+    text-align: center;
+    border: 0;
+    border-top: 1px solid $grey;
+    border-bottom: 1px solid $grey;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

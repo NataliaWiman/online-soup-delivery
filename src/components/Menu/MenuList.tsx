@@ -1,31 +1,7 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 import { MenuItem } from "./MenuItem";
-import { menuRef } from "../Firebase/firebase";
 
-export const MenuList = () => {
-  const [menu, setMenu]  = useState<any>([]);
-
-  useEffect(() => {
-    menuRef.on('value', (snapshot) => {
-      let items = snapshot.val();
-      let newState = [];
-
-      for (let item in items) {
-        newState.push({
-          id: item,
-          title: items[item].title,
-          ingredients: items[item].ingredients,
-          description: items[item].description,
-          price: items[item].price,
-          label: items[item].label,
-          preference: items[item].preference,
-          done: items[item].done
-        });
-      }
-      setMenu(newState)
-    });
-  },[])
-
+export const MenuList = ({ menu }: any) => {
   return (
     <ul className="menu-list">
       {menu.map((item: any, i: number) => (

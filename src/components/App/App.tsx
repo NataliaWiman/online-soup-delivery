@@ -4,12 +4,12 @@ import { AccountPage } from "../pages/Account";
 import { AdminPage } from "../pages/Admin";
 import { HomePage } from "../pages/Home";
 import { MenuPage } from "../pages/Menu";
+import { BasketAddressPage, BasketPage } from "../pages/Basket";
 import { RestorePasswordPage } from "../pages/RestorePassword";
 import { SignInPage } from "../pages/SignIn";
 import { SignUpPage } from "../pages/SignUp";
 import * as ROUTES from '../../constants/routes';
 import { PrivateRoute } from "../PrivateRoutes";
-import { SignOut } from "../Auth/SignOut";
 import { Header } from "../Header";
 
 export const App = () =>
@@ -22,6 +22,8 @@ export const App = () =>
       <Route path={ROUTES.PASSWORD_RESTORE} component={RestorePasswordPage} />
       <PrivateRoute exact path={ROUTES.ACCOUNT} component={AccountPage} />
       <PrivateRoute exact path={ROUTES.ADMIN} component={AdminPage} />
+      <Route exact path={ROUTES.BASKET} component={BasketPage} />
+      <Route exact path={ROUTES.BASKET_ADDRESS} component={BasketAddressPage} />
       <Route path={ROUTES.MENU} component={MenuPage} />
     </div>
   </Router>

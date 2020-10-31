@@ -1,5 +1,8 @@
 .menu-nav {
+  position: fixed;
+  margin-top: 45px;
   width: 100%;
+  max-height: 45px;
   color: $black;
   background-color: $accent;
 

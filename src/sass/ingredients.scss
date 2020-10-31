@@ -1,5 +1,7 @@
 .ingredients {
-  margin-bottom: 20px;
+  opacity: 0;
+  height: 0px;
+  overflow: hidden;
   
   &__title {
     @include subtitle;
@@ -11,5 +13,21 @@
     text-transform: uppercase;
     letter-spacing: 0.5px;
     color: $black;
+  }
+
+  &--show {
+    margin-bottom: 20px;
+    animation-name: expand;
+    animation-duration: 0.3s;
+  }
+
+  @keyframes expand {
+    0% {
+      height: 0px;
+    }
+    100% {
+      height: auto;
+      margin-bottom: 20px;
+    }
   }
 }

@@ -43,7 +43,7 @@ const handleToggle = () => {
       </div>
       <div className="header__user-group">
         <Link to={ROUTES.ACCOUNT} area-label="Account"><AccountIcon /></Link>
-        <Link to={ROUTES.HOME} area-label="Shopping Cart"><BasketIcon /></Link>
+        <Link to={ROUTES.BASKET} area-label="Shopping Cart"><BasketIcon /></Link>
       </div>
       </div>
       

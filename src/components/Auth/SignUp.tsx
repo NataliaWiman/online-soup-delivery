@@ -7,7 +7,6 @@ import { AuthContext } from "../Firebase/AuthProvider";
 
 interface FormItems {
   username: string;
-  phone: string;
   email: string;
   password: string;
   admin: boolean;
@@ -19,7 +18,6 @@ const SignUp = () => {
     username: "",
     email: "",
     password: "",
-    phone: "",
     admin: false
   } as FormItems);
 
@@ -53,7 +51,7 @@ const SignUp = () => {
           .set({
             email: values.email,
             username: values.username,
-            phone: values.phone
+            admin: values.admin
           })
           .then(() => {
             console.log('ok');
@@ -69,11 +67,10 @@ const SignUp = () => {
   return (
     <form onSubmit={handleSubmit} className="sign-up__form">
       <input type="text" name="username" placeholder="Name" onChange={handleChange} />
-      <input type="text" name="phone" placeholder="Phone" onChange={handleChange}/>
       <input type="text" name="email" placeholder="Email" onChange={handleChange}/>
       <input type="password" name="password" placeholder="Password" onChange={handleChange}/>
       <label htmlFor="admin" className="sign-up__admin-checkbox">
-        <input type="checkbox" name="admin" value="true" />
+        <input type="checkbox" name="admin" value="true" onChange={handleChange}/>
         <p>I'm an Admin</p>
       </label>
       <button type="submit" className="sign-up__button button">Sign Up</button>

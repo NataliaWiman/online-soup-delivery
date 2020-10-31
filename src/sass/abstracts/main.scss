@@ -20,6 +20,11 @@ textarea {
   font-family: $font-family;
 }
 
+img {
+  height: 100%;
+  width: 100%;
+}
+
 p {
   margin: 0;
 }
@@ -48,11 +53,13 @@ p {
   margin: 0 auto;
 
   @media (min-width: 992px) {
-    max-width: 992px;
+    //max-width: 992px;
   }
 }
 
 .button {
+  display: grid;
+  place-items: center;
   width: 100%;
   min-height: 45px;
   padding: 10px 20px;
@@ -60,6 +67,7 @@ p {
   font-size: $font-size-medium;
   font-weight: $semibold;
   text-transform: uppercase;
+  text-decoration: none;
   letter-spacing: 0.5px;
   color: $black;
   background-color: $accent;
@@ -98,13 +106,25 @@ p {
 
   &__wrapper {
     width: 100%;
-    margin-top: 30px;
+    margin-top: 45px;
     padding: 50px;
+    padding-top: 20px;
     background-color: $bg1;
   }
 
   &__title {
     @include title;
     margin-bottom: 30px;
+  }
+}
+
+.input {
+  font-family: $font-family;
+  font-size: $font-size-medium;
+  width: 100%;
+  padding: 15px 20px;
+
+  &:focus {
+    outline: none;
   }
 }

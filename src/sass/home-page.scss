@@ -4,10 +4,60 @@
   display: grid;
   place-items: center;
   padding: $padding-mobile;
-  color: $white;
-  background-color: #444;
+  background-color: $bg1;
   
   &__container {
     width: 100%;
+    padding: 0 50px;
+  }
+
+  &__input {
+    padding-left: 50px;
+    border: 2px solid $accent;
+
+    &:focus {
+      box-shadow: 0px 0px 5px rgba($accent, 0.5);
+    }
+
+    &-wrapper {
+      position: relative;
+      margin-bottom: 20px;
+
+      span {
+        position: absolute;
+        top: 50%;
+        left: 15px;
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  &__slogan {
+    @include title;
+    margin: 50px 0;
+    text-align: center;
+  }
+
+  &__share-icon {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    margin-bottom: 50px;
+
+    .share--two {
+      fill: $accent;
+    }
+    .share--one {
+      fill: $black;
+    }
+  }
+
+  &__description {
+    @include text;
+
+    span {
+      display: block;
+      margin-bottom: 20px;
+    }
   }
 }

@@ -46,6 +46,10 @@
       align-items: center;
       white-space: nowrap;
     }
+
+    &--small {
+      max-width: 90px;
+    }
   }
 
   &__btn {

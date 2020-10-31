@@ -1,4 +1,6 @@
 .nutrition {
+  display: none;
+
   &__title {
     @include subtitle;
   }
@@ -31,5 +33,9 @@
     font-size: $font-size-small;
     letter-spacing: 0.5px;
     color: $black;
+  }
+
+  &--show {
+    display: block;
   }
 }

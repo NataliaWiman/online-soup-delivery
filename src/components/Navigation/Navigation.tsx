@@ -10,7 +10,7 @@ export const Navigation = ({ isOpen, handleClose }: NavigationProps) => {
     handleClose();
   };
 
-  const handleClickOtside = useCallback(
+  const handleClickOutside = useCallback(
     (event: any) => {
       if (node && node.current && node.current.contains(event.target)) {
         return; // inside click
@@ -20,11 +20,11 @@ export const Navigation = ({ isOpen, handleClose }: NavigationProps) => {
   );
 
   useEffect(() => {
-    document.addEventListener('mousedown', handleClickOtside);
+    document.addEventListener('mousedown', handleClickOutside);
     return () => {
-      document.removeEventListener('mousedown', handleClickOtside);
+      document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [handleClickOtside]);
+  }, [handleClickOutside]);
 
   return (
     <div className={isOpen? "navigation__overlay" : ""}>

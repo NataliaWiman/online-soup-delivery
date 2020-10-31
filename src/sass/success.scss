@@ -1,0 +1,45 @@
+.success {
+  position: fixed;
+  bottom: 40px;
+  left: 0;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  z-index: 100;
+
+  &--hide {
+    visibility: hidden;
+    transform: translateY(1000px);
+  }
+  &--show {
+    transform: translateX(0);
+    transition: all ease-in-out 0.3s;
+    animation: FadeAnimation 1.5s ease-in 1.5s forwards;
+  }
+
+  @keyframes FadeAnimation {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+    }
+  
+    100% {
+      transform: translateY(1000px);
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  button {
+    width: 300px;
+    background-color: $green;
+    border-radius: 20px;
+    box-shadow: $box-shadow;
+
+    span {
+      font-size: $font-size-small;
+      color: $white;
+    }
+  }
+}

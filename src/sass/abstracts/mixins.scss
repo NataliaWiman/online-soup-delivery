@@ -4,6 +4,14 @@
   padding: 0;
 }
 
+@mixin text {
+  font-family: $font-family;
+  font-size: $font-size-medium;
+  font-weight: $regular;
+  text-transform: none;
+  color: $black;
+}
+
 @mixin title {
   font-family: $font-secondary;
   font-size: $font-size-xl;
@@ -21,6 +29,11 @@
   letter-spacing: 1.5px;
   text-transform: uppercase;
   color: $dark-grey;
+}
+
+@mixin description {
+  font-size: $font-size-medium;
+  font-weight: $thin;
 }
 
 @mixin overlay {

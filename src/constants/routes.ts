@@ -4,4 +4,6 @@ export const SIGN_UP = '/signup';
 export const SIGN_IN = '/signin';
 export const ACCOUNT = '/account';
 export const ADMIN = '/admin';
+export const BASKET = '/basket';
+export const BASKET_ADDRESS = '/basket-step2';
 export const PASSWORD_RESTORE = '/restore-forget';
