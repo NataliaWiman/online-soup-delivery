@@ -4,7 +4,7 @@ import "firebase/auth";
 import "firebase/firestore";
 import { AuthContext } from "../../Firebase/AuthProvider";
 import { SignOut } from "../../Auth";
-import { Bonus } from "../../Bonus";
+//import { Bonus } from "../../Bonus";
 
 //export const currentUser = firebase.auth().currentUser;
 
@@ -27,17 +27,10 @@ export const AccountPage = () => {
           <h2 className="account__title modal__title">{userDetails.username}</h2>
           <p className="account__email">{userDetails.email}</p>
           <p className="account__role">{userDetails.admin ? "Admin" : 'User'}</p>
+          <div className="account__buttons">
+            <SignOut />
         </div>
-        <div className="account__bonus bonus">
-          <Bonus />
         </div>
-        <div className="account__send-soup send-soup">
-          Send soup to a friend
-        </div>
-        <ul className="account__buttons">
-          <li>Previous orders</li>
-          <li><SignOut /></li>
-        </ul>
       </div>
     </main>
   )}

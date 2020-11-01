@@ -7,6 +7,10 @@
   &__wrapper {
     padding: 30px 20px;
     min-height: calc(100vh - 200px);
+
+    &--long {
+      min-height: 96vh;
+    }
   }
 
   &__order {
@@ -68,10 +72,159 @@
   }
 
   &__empty {
-    width: 100%;
+    width: 60%;
     height: 100%;
     display: grid;
     place-items: center;
+    margin: 0 auto;
+    margin-top: 50%;
+
+    &-text {
+      @include title;
+      margin-bottom: 20%;
+    }
+  }
+
+  &__address {
+    min-height: 95vh;
+
+    &-input {
+      &-title {
+        @include title;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      label {
+        display: block;
+        &:not(:last-child) {
+          margin-bottom: 20px;
+        }
+      }
+
+      span {
+        @include subtitle;
+        display: block;
+        margin-bottom: 10px;
+        font-weight: $semibold;
+        color: $black;
+      }
+
+      input {
+        border: 2px solid $accent;
+
+        &:focus {
+          box-shadow: 0px 0px 5px rgba($accent, 0.5);
+        }
+      }
+    }
+
+    &-payment {
+      margin-top: 50px;
+
+      h2 {
+        @include title;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      span {
+        display: flex;
+        justify-content: center;
+
+        img {
+          height: 45px;
+          width: auto;
+
+          &:not(:last-child) {
+            margin-right: 20px;
+          }
+        }
+      }
+
+      button {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        background-color: rgba($accent, 0.5);
+        border: 2px solid $accent;
+        
+        &:not(:last-child) {
+          margin-bottom: 10px;
+        }
+
+        img {
+          position: absolute;
+          top: 6px;
+          left: 10px;
+          align-self: flex-start;
+          height: 30px;
+          width: auto;
+        }
+      }
+    }
+  }
+
+  &__finish {
+    min-height: 97vh;
+    display: grid;
+    place-items: center;
+  }
+
+  &__container {
+    margin-top: -40%;
+  }
+
+  &__estimated {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+
+    &-text {
+      @include text;
+      font-size: $font-size-large;
+      margin-bottom: 30px;
+    }
+    &-time {
+      @include title;
+
+      span {
+        font-size: 40px;
+        line-height: 40px;
+        color: $black;
+        background-color: $accent;
+        border-radius: 5px;
+        padding: 5px 10px;
+        margin: 0 3px;
+      }
+    }
+    &-img {
+      position: absolute;
+      bottom: 25%;
+      display: grid;
+      place-items: center;
+      width: 150px;
+      height: 150px;
+      overflow: hidden;
+
+      img {
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+  &__button-wrapper {
+    position: fixed;
+    left: 0;
+    bottom: 20px;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 
@@ -83,9 +236,14 @@
 
   &__item {
     display: flex;
+    position: relative;
 
     &:not(:last-child) {
       margin-bottom: 20px;
+    }
+
+    &--hide {
+      display: none;
     }
   }
 
@@ -125,6 +283,20 @@
     @include title;
     white-space: nowrap;
   }
+
+  &__remove {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 25px;
+    height: 25px;
+    transform: rotate(45deg);
+    cursor: pointer;
+
+    path {
+      fill: $dark-grey;
+    }
+  }
 }
 
 .add-note {
@@ -149,6 +321,7 @@
     @include text;
     padding: 15px;
     margin-bottom: 10px;
+    border: 2px solid $accent;
     //transition: all ease-in-out 0.5s;
 
     &--hide {

@@ -19,7 +19,7 @@ export const SignOut = () => {
 
   return (
     <div>
-      <button onClick={handleClick}>Sign Out</button>
+      <button className="button ghost-button" onClick={handleClick}>Sign Out</button>
     </div>
    );
 };

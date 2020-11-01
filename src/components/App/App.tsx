@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { AccountPage } from "../pages/Account";
 import { AdminPage } from "../pages/Admin";
 import { HomePage } from "../pages/Home";
-import { MenuPage } from "../pages/Menu";
-import { BasketAddressPage, BasketPage } from "../pages/Basket";
+import { MenuPage, MenuDrinksPage, MenuExtraPage } from "../pages/Menu";
+import { BasketAddressPage, BasketFinishPage, BasketPage } from "../pages/Basket";
 import { RestorePasswordPage } from "../pages/RestorePassword";
 import { SignInPage } from "../pages/SignIn";
 import { SignUpPage } from "../pages/SignUp";
@@ -24,7 +24,10 @@ export const App = () =>
       <PrivateRoute exact path={ROUTES.ADMIN} component={AdminPage} />
       <Route exact path={ROUTES.BASKET} component={BasketPage} />
       <Route exact path={ROUTES.BASKET_ADDRESS} component={BasketAddressPage} />
+      <Route exact path={ROUTES.BASKET_FINISH} component={BasketFinishPage} />
       <Route path={ROUTES.MENU} component={MenuPage} />
+      <Route path={ROUTES.MENU_DRINKS} component={MenuDrinksPage} />
+      <Route path={ROUTES.MENU_EXTRA} component={MenuExtraPage} />
     </div>
   </Router>
 ;

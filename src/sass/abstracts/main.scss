@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@400;600&family=Roboto:wght@300;400;500;700&display=swap");
+
+
 *,
 *:before,
 *:after {
@@ -12,6 +15,7 @@ body {
   background-color: $body-background;
   overflow-x: hidden;
   min-height: 100vh;
+  font-smooth: auto;
 }
 
 button,
@@ -56,6 +60,18 @@ p {
     //max-width: 992px;
   }
 }
+
+/* // Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) { ... }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... } */
 
 .button {
   display: grid;

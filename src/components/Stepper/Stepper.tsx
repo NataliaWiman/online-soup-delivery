@@ -15,7 +15,7 @@ export const Stepper = ({ stepperValue, setStepperValue }:any) => {
   return (
     <div className="stepper">
       <button onClick={handleDecrement} className="stepper--decrease"><span><MinusIcon /></span></button>
-      <input type="text" placeholder="0" value={stepperValue} />
+      <input type="text" placeholder="0" value={stepperValue} readOnly />
       <button onClick={handleIncrement} className="stepper--increase"><span><PlusIcon /></span></button>
     </div>
   )

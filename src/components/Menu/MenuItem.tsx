@@ -7,24 +7,29 @@ import { TrashIcon } from "../../assets/icons/Trash";
 import { menuRef } from "../Firebase/firebase";
 import { Success } from "../Success";
 import { AuthContext } from "../Firebase/AuthProvider";
-import { Stepper } from "../Stepper";
 import creamypumpkinsoup from '../../assets/img/creamypumpkinsoup.jpeg';
 import spicytomatosoup from '../../assets/img/spicytomatosoup.jpeg';
 import greencurrysoup from '../../assets/img/greencurrysoup.jpeg';
+import chickennoodlesoup from '../../assets/img/chickennoodlesoup.jpeg';
+import creamysalmonsoup from '../../assets/img/creamysalmonsoup.jpeg';
 import coffee from '../../assets/img/coffee.jpeg';
 import soda from '../../assets/img/soda.jpeg';
 import garlicbread from '../../assets/img/garlicbread.jpeg';
+import { MinusIcon } from "../../assets/icons/Minus";
+import { PlusIcon } from "../../assets/icons/Plus";
 
 export const MenuItem = (props: any) => {
   const { menuItem } = props;
+
   const [isOverflowOpen, setOverflowOpen] = useState(false);
   const [isShowInfo, setShowInfo] = useState(false);
   const [isSuccess, setSuccess] = useState(false);
+  const [stepperValue, setStepperValue] = useState<number>(1);
 
   const authContext = useContext(AuthContext);
   const [userDetails, setUserDetails] = useState(Object);
+  
   const currentUser = (authContext.user ? authContext.user.uid : "undefined");
-
   const db = firebase.firestore();
   const userRef = db.collection('Users').doc(currentUser);
 
@@ -71,9 +76,22 @@ export const MenuItem = (props: any) => {
     </div>
   ;
 
-  const AddToCart = () => 
-    <button onClick={handleSuccess} className="button">Add to cart</button>
-  ;
+  const AddToCart = () => {
+    const updateBasket = (newItem: any) => {
+      const quantity = stepperValue;
+      newItem.quantity = quantity;
+
+      userRef.update({
+        basket: firebase.firestore.FieldValue.arrayUnion(newItem)
+      })
+    } 
+
+    return (
+      <button onClick={() => {updateBasket(menuItem); handleSuccess()}} className="button">Add to cart</button>
+    )
+  };
+
+  /* <button onClick={handleSuccess} className="button">Add to cart</button> */
 
   const Ingredients = () => 
     <div className={!isShowInfo ? "menu-card__ingredients ingredients" : "menu-card__ingredients ingredients--show"}>
@@ -116,6 +134,10 @@ export const MenuItem = (props: any) => {
         imageCode = spicytomatosoup; break;
       case 'greencurrysoup':
         imageCode = greencurrysoup; break;
+      case 'chickennoodlesoup':
+        imageCode = chickennoodlesoup; break;
+      case 'creamysalmonsoup':
+        imageCode = creamysalmonsoup; break;
       case 'coffee':
         imageCode = coffee; break;
       case 'soda':
@@ -127,6 +149,14 @@ export const MenuItem = (props: any) => {
     return (
       <img src={imageCode} alt={imageName} className="menu-card__image"/>
     );
+  }
+
+  const handleDecrement = () => {
+    setStepperValue((prevCount: number) => prevCount >= 1 ? prevCount - 1 : 0);
+  }
+
+  const handleIncrement = () => {
+    setStepperValue((prevCount: number) => prevCount + 1);
   }
 
   return (
@@ -141,7 +171,7 @@ export const MenuItem = (props: any) => {
       }
       
       {renderImage(menuItem.label)}
-      
+
       <div className={!isShowInfo ? "menu-card__content" : "menu-card__content menu-card__content--info"}>
         <p className="menu-card__item-type">{menuItem.preference}</p>
         <div className="menu-card__title-wrapper">
@@ -150,7 +180,13 @@ export const MenuItem = (props: any) => {
         </div>
         <p className="menu-card__description">{menuItem.description}</p>
         <div className="menu-card__addtocart">
-          <Stepper />
+
+        <div className="stepper">
+          <button onClick={handleDecrement} className="stepper--decrease"><span><MinusIcon /></span></button>
+          <input type="text" placeholder="0" value={stepperValue} readOnly />
+          <button onClick={handleIncrement} className="stepper--increase"><span><PlusIcon /></span></button>
+        </div>
+
           <AddToCart />
         </div>
         <Ingredients />

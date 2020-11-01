@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Creamy Pumpkin Soup",
+    "description": "with vegan feta cheese and pumpkin seeds",
+    "ingredients": "pumpkin, carrot, bell pepper, garlic",
+    "preference": "vegan"
+  },
+  {
+    "title": "Spicy Tomato Soup",
+    "description": "with vegan sour cream and pumpkin seeds",
+    "ingredients": "tomato, bell pepper, carrot, garlic, onion",
+    "preference": "vegan"
+  },
+  {
+    "title": "Green curry soup",
+    "description": "with fresh coriander",
+    "ingredients": "broccoli, kale, avocado, onion",
+    "preference": "vegan"
+  },
+  {
+    "title": "Chicken Noodle Soup",
+    "description": "with coconut milk and vegetables",
+    "ingredients": "chicken, egg noodles, broccoli, carrot, coconut milk, lime",
+    "preference": "chicken"
+  },
+  {
+    "title": "Creamy Salmon Soup",
+    "description": "with curry and egg noodles",
+    "ingredients": "salmon, egg noodles, broccoli, coconut milk, onion",
+    "preference": "chicken"
+  }
+]

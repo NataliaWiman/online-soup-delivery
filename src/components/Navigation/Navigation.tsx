@@ -29,7 +29,7 @@ export const Navigation = ({ isOpen, handleClose }: NavigationProps) => {
   return (
     <div className={isOpen? "navigation__overlay" : ""}>
       <div ref={node} className={isOpen ? "navigation open" : "navigation"}>
-        <ul className="navigation__list">
+        <ul className="navigation__list page-width">
         <li className="navigation__item">
             <Link onClick={handleClick} to={ROUTES.HOME} className="navigation__link">Home</Link>
           </li>
@@ -39,12 +39,6 @@ export const Navigation = ({ isOpen, handleClose }: NavigationProps) => {
           <li className="navigation__item">
             <Link onClick={handleClick} to={ROUTES.ACCOUNT} className="navigation__link">Account</Link>
           </li>
-          <li className="navigation__item">
-            <Link onClick={handleClick} to={ROUTES.ADMIN} className="navigation__link">Admin</Link>
-          </li>
-        </ul>
-        <ul>
-          <li>About us</li>
         </ul>
       </div>
     </div>

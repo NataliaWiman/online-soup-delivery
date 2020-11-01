@@ -1,9 +1,15 @@
 .account {
+  &__wrapper {
+    min-height: 96vh;
+    display: grid;
+    place-items: center;
+  }
   &__title-wrapper {
-    margin-bottom: 40px;
+    text-align: center;
   }
   &__title {
-    margin-bottom: 5px;
+    font-size: $font-size-xl;
+    margin-bottom: 10px;
   }
   &__email {
     color: $dark-grey;
@@ -18,14 +24,7 @@
   }
   &__buttons {
     @include list-reset;
-
-    li {
-      border-top: 1px solid $grey;
-      padding: 15px 0;
-
-      &:last-child {
-        border-bottom: 1px solid $grey;
-      }
-    }
+    margin-top: 50px;
+    width: 100%;
   }
 }

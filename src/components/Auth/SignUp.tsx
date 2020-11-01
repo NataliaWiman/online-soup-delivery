@@ -18,7 +18,8 @@ const SignUp = () => {
     username: "",
     email: "",
     password: "",
-    admin: false
+    admin: false,
+    basket: []
   } as FormItems);
 
   const history = useHistory();
@@ -51,7 +52,8 @@ const SignUp = () => {
           .set({
             email: values.email,
             username: values.username,
-            admin: values.admin
+            admin: values.admin,
+            basket: []
           })
           .then(() => {
             console.log('ok');

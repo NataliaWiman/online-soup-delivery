@@ -39,6 +39,7 @@ export const NewMenuItemForm = ({ showForm, handleClose }: NewItemProps) => {
     setDescription("");
     setPrice("");
     setPreference("");
+    setType("");
     setCalories("");
     setFats("");
     setCarbs("");
@@ -52,7 +53,6 @@ export const NewMenuItemForm = ({ showForm, handleClose }: NewItemProps) => {
     if (target.name === 'title') {
       setTitle(value);
       setLabel(value.replace(/\s/g,'').toLowerCase());
-      setType(value.replace(/\s/g,'').toLowerCase());
     } else if (target.name === 'ingredients') {
       setIngredients(value);
     } else if (target.name === 'description') {
@@ -61,6 +61,8 @@ export const NewMenuItemForm = ({ showForm, handleClose }: NewItemProps) => {
       setPrice(value);
     } else if (target.name === 'preference') {
       setPreference(value);
+    } else if (target.name === 'type') {
+      setType(value);
     } else if (target.name === 'calories') {
       setCalories(value);
     } else if (target.name === 'fats') {
@@ -92,9 +94,9 @@ export const NewMenuItemForm = ({ showForm, handleClose }: NewItemProps) => {
           className="menu-new__input menu-new__input--type"
           required>
           <option value="Choose food type*" selected disabled>Choose food type*</option>
-          <option value="meat">Soups</option>
-          <option value="chicken">Drinks</option>
-          <option value="fish">Extra</option>
+          <option value="soups">Soups</option>
+          <option value="drinks">Drinks</option>
+          <option value="extra">Extra</option>
         </select>
       </label>
       <label htmlFor="preference" className="menu-new__label">

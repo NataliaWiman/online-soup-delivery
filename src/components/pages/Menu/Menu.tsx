@@ -29,6 +29,7 @@ export const MenuPage = () => {
         newState.push({
           id: item,
           title: items[item].title,
+          type: items[item].type,
           ingredients: items[item].ingredients,
           description: items[item].description,
           price: items[item].price,
@@ -47,7 +48,7 @@ export const MenuPage = () => {
   const [filteredMenu, setFilteredMenu] = useState([]);
 
   useEffect(() => {
-    setFilteredMenu(menu);
+    setFilteredMenu(menu.filter((item:any) => item.type === 'soups'));
   },[menu]);
 
   const handleFilter = (e: any) => {

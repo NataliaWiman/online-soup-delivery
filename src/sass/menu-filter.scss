@@ -6,6 +6,7 @@
   color: $black;
   background-color: $bg1;
   box-shadow: $box-shadow;
+  z-index: 10;
 
   &__wrapper {
     width: 100%;
@@ -20,29 +21,27 @@
 
   &__item {
     width: 100%;
+    min-height: 45px;
     display: grid;
     place-items: center;
-    min-height: 45px;
+  }
+
+  &__button {
+    padding: 5px 15px;
+    font: inherit;
     font-size: $font-size-medium;
+    text-transform: capitalize;
+    background-color: transparent;
+    border: 0;
+    border-radius: 20px;
+    cursor: pointer;
 
-    button {
-      padding: 5px 15px;
-      font: inherit;
-      text-transform: capitalize;
-      background-color: transparent;
-      border: 0;
-      cursor: pointer;
-
-      &:focus {
-        outline: none;
-      }
+    &:focus {
+      outline: none;
     }
 
     &--active {
-      button {
-        background-color: $accent;
-        border-radius: 20px;
-      }
+      background-color: $accent;
     }
   }
 }
