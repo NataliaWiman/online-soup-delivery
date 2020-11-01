@@ -5,7 +5,7 @@ import 'firebase/auth';
 const config = {
   apiKey: process.env.REACT_APP_APIKEY,
   authDomain: process.env.REACT_APP_AUTHDOMAIN,
-  databaseURL: "https://online-soup-delivery.firebaseio.com",
+  databaseURL: process.env.REACT_APP_DB,
   projectId: process.env.REACT_APP_PID,
   storageBucket: process.env.REACT_APP_SB,
   messagingSenderId: process.env.REACT_APP_SID,
