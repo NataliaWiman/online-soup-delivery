@@ -38,6 +38,10 @@ export const BasketPage = () => {
     userRef.get().then(snapshot => setUserDetails(snapshot.data()));
   }, [currentUser]);
 
+  useEffect(() => {
+    userRef.onSnapshot(snapshot => setUserDetails(snapshot.data()))
+  }, [currentUser]);
+
   const handleAddNote = () => {
     setAddNote(!addNote)
   }
@@ -94,7 +98,7 @@ export const BasketPage = () => {
       reduced = numbers.reduce((accumulator: any, currentValue: any) => accumulator + currentValue);
     }
 
-    return reduced;
+    return reduced + 30;
   }
 
   const handleDecrement = () => {
@@ -115,7 +119,7 @@ export const BasketPage = () => {
               <div className="basket__order">
                 <ul className="basket__product-list product-list">
                 {userDetails.basket.map((basketItem:any) => 
-                    <li className="product-list__item" key={basketItem.label}>
+                    <li className="product-list__item" key={basketItem.id}>
                       {renderImage(basketItem.label)}
                       <div className="product-list__info">
                         <p>

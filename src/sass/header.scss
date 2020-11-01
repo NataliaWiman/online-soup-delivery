@@ -22,7 +22,25 @@
   }
 
   &__user-group {
+    position: relative;
     display: flex;
     justify-content: space-between;
+
+    span {
+      position: absolute;
+      display: block;
+      top: -3px;
+      right: -7px;
+      height: 17px;
+      width: 17px;
+      padding-left: 1px;
+      font-size: $font-size-small;
+      font-weight: 700;
+      line-height: 17px;
+      text-align: center;
+      text-decoration: none;
+      background-color: $accent;
+      border-radius: 50%;
+    }
   }
 }

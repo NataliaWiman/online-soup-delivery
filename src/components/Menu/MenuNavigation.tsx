@@ -11,9 +11,9 @@ export const MenuNavigation = () => {
       case 'soups':
         return <Link onClick={() => {setType(link)}} to={ROUTES.MENU} area-label="Soups">Soups</Link>;
       case 'drinks':
-        return <Link to={ROUTES.MENU_DRINKS} area-label="Drinks">Drinks</Link>;
+        return <Link onClick={() => {setType(link)}} to={ROUTES.MENU_DRINKS} area-label="Drinks">Drinks</Link>;
       case 'extra':
-        return <Link to={ROUTES.MENU_EXTRA} area-label="Extra">Extra</Link>;
+        return <Link onClick={() => {setType(link)}} to={ROUTES.MENU_EXTRA} area-label="Extra">Extra</Link>;
   }};
 
   return (
@@ -23,7 +23,6 @@ export const MenuNavigation = () => {
         return (
           <li 
             key={type}
-            onClick={() => {setType(type)}}
             className={activeType === type ? "menu-nav__item menu-nav__item--active" : "menu-nav__item" }>
             { renderLink(type) }
           </li>

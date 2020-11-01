@@ -81,8 +81,19 @@ export const MenuItem = (props: any) => {
       const quantity = stepperValue;
       newItem.quantity = quantity;
 
-      userRef.update({
-        basket: firebase.firestore.FieldValue.arrayUnion(newItem)
+      userDetails.basket.map((oldItem: any) => {
+        if (oldItem.id !== newItem.id) {
+          userRef.update({
+            basket: firebase.firestore.FieldValue.arrayUnion(newItem)
+          })
+        } else {
+          /* userRef.update({
+            basket: {
+              quantity: (oldItem.quantity + 1)
+            }
+          }) */
+          console.log('Item already added to cart with quantity of ' + oldItem.quantity);
+        }
       })
     } 
 
@@ -147,7 +158,7 @@ export const MenuItem = (props: any) => {
     }
 
     return (
-      <img src={imageCode} alt={imageName} className="menu-card__image"/>
+      <img src={imageCode} alt={imageName} onClick={ handleShowInfo } className={isShowInfo ? "menu-card__image menu-card__image--large" : "menu-card__image"}/>
     );
   }
 
