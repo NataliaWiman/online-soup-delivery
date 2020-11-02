@@ -12,13 +12,13 @@ import "firebase/firestore";
 import { AuthContext } from "../Firebase/AuthProvider";
 
 export const Header = () => {
-const [isOpen, setIsOpen] = useState(false);
-const [isNavOpen, setNavIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [isNavOpen, setNavIsOpen] = useState(false);
 
-const authContext = useContext(AuthContext);
+  const authContext = useContext(AuthContext);
   const [userDetails, setUserDetails] = useState(Object);
   
-  const currentUser = (authContext.user ? authContext.user.uid : "undefined");
+  const currentUser = (authContext && authContext.user && authContext.user.uid ? authContext.user.uid : "undefined");
   const db = firebase.firestore();
   const userRef = db.collection('Users').doc(currentUser);
 

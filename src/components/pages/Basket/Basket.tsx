@@ -19,6 +19,7 @@ import soda from '../../../assets/img/soda.jpeg';
 import garlicbread from '../../../assets/img/garlicbread.jpeg';
 import { PlusIcon } from "../../../assets/icons/Plus";
 import { MinusIcon } from "../../../assets/icons/Minus";
+import { ArrowIcon } from "../../../assets/icons/Arrow";
 
 export const BasketPage = () => {
   const [addNote, setAddNote] = useState(false);
@@ -112,7 +113,15 @@ export const BasketPage = () => {
   return (
     <main className="basket">
       <div className={userDetails && userDetails.basket && userDetails.basket.length ? "basket__wrapper page-width modal__wrapper" : "basket__wrapper basket__wrapper--long page-width modal__wrapper"}>
-        <h2 className="basket__title modal__title">Basket</h2>
+      <div>
+          <h2 className="basket__title modal__title">
+            <Link to={ROUTES.MENU} className="basket__go-back">
+              <ArrowIcon />
+            </Link>
+            Basket
+          </h2>
+        </div>
+
           {
             userDetails && userDetails.basket && userDetails.basket.length ?
             <>

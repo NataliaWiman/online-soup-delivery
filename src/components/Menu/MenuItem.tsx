@@ -81,21 +81,22 @@ export const MenuItem = (props: any) => {
       const quantity = stepperValue;
       newItem.quantity = quantity;
 
-      userDetails.basket.map((oldItem: any) => {
+      userDetails.basket.length ? userDetails.basket.map((oldItem: any) => {
         if (oldItem.id !== newItem.id) {
           userRef.update({
             basket: firebase.firestore.FieldValue.arrayUnion(newItem)
           })
         } else {
-          /* userRef.update({
-            basket: {
-              quantity: (oldItem.quantity + 1)
-            }
-          }) */
+          userRef.update({
+            basket: firebase.firestore.FieldValue.arrayUnion(newItem)
+          })
           console.log('Item already added to cart with quantity of ' + oldItem.quantity);
         }
+      }) :
+      userRef.update({
+        basket: firebase.firestore.FieldValue.arrayUnion(newItem)
       })
-    } 
+    };
 
     return (
       <button onClick={() => {updateBasket(menuItem); handleSuccess()}} className="button">Add to cart</button>
